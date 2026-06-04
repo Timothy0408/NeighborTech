@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeighborTech | Patient Tech Support for Seniors</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: var(--primary-blue);">NeighborTech</a></div>
+            <nav>
+                <ul style="list-style: none; display: flex; gap: 20px; font-size: 1rem;">
+                    <li><a href="booking.html" style="text-decoration: none; color: var(--accent-blue); font-weight: bold;">Book Now</a></li>
+                    <li><a href="family-plan.html" style="text-decoration: none; color: var(--secondary-blue); font-weight: bold;">Family Plan</a></li>
+                    <li><a href="workshops.html" style="text-decoration: none; color: var(--secondary-blue); font-weight: bold;">Workshops</a></li>
+                </ul>
+            </nav>
+            <div class="phone-top">Call Us: (555) 123-4567</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Technology help that's patient, kind, and local.</h1>
+            <p style="font-size: 1.4rem; margin-bottom: 2rem;">We help you set up devices, stay safe online, and use technology with confidence—all in the comfort of your home.</p>
+            <a href="booking.html" class="btn">Book a Visit Today</a>
+        </div>
+    </section>
+
+    <section class="container section">
+        <h2 id="services">How We Can Help</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>The Quick Fix</h3>
+                <p>One-time visit for troubleshooting, printer issues, or software help.</p>
+                <div class="price">$99 - $149</div>
+                <p>Focused on getting you back on track.</p>
+            </div>
+            <div class="service-card" style="border: 2px solid var(--accent-blue);">
+                <h3>The New Start</h3>
+                <p>New device setup (Phone, Tablet, or PC). We transfer your data and teach you how to use it.</p>
+                <div class="price">$199 - $299</div>
+                <p>Our most popular package!</p>
+            </div>
+            <div class="service-card">
+                <h3>Tech Care Plan</h3>
+                <p>Monthly peace of mind with unlimited phone support and one remote session.</p>
+                <div class="price">$29/mo</div>
+                <p>Never worry about tech again.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="lead-magnet">
+            <div class="container">
+                <div class="magnet-flex">
+                    <div class="magnet-image">
+                        <img src="assets/images/scam-guide-cover.png" alt="Scam Guide Cover">
+                    </div>
+                    <div class="magnet-form">
+                        <h2>Free Guide: Stay Safe Online</h2>
+                        <p style="margin-bottom: 20px;">Download "10 Common Phone Scams Targeting Seniors" and learn how to protect yourself and your family.</p>
+                        <form id="magnet-form">
+                            <div class="form-group">
+                                <label for="name">First Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+                            <button type="submit" class="btn" style="width: 100%;">Send Me the Guide</button>
+                        </form>
+                        <div id="magnet-thanks" style="display: none; padding: 20px; text-align: center; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                            <h3>Thank you! Check your email soon.</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container section">
+        <h2>Why Choose NeighborTech?</h2>
+        <div class="trust-signals">
+            <div class="trust-item">
+                <span class="trust-icon">✓</span>
+                <div>
+                    <strong>Patience First:</strong> We don't just fix it; we explain it in plain English at your pace.
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">✓</span>
+                <div>
+                    <strong>Local & Trusted:</strong> All our technicians are background-checked and live right here in the community.
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">✓</span>
+                <div>
+                    <strong>Transparent Pricing:</strong> No hidden fees. You'll always know the cost before we start.
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">✓</span>
+                <div>
+                    <strong>Home Visits:</strong> We come to you. No need to lug your computer to a busy shop.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container section" id="contact">
+        <div style="max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <h2 style="text-align: center; border-bottom: none;">Book Your Visit</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Fill out the form below or call us at <strong>(555) 123-4567</strong>.</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="cname">Name</label>
+                    <input type="text" id="cname" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="cphone">Phone Number</label>
+                    <input type="text" id="cphone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="adate">Preferred Date</label>
+                    <input type="date" id="adate" name="appointmentDate" required>
+                </div>
+                <div id="slot-container" style="display: none; margin-bottom: 20px;">
+                    <label>Available Times</label>
+                    <div id="slots-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; margin-top: 10px;">
+                        <!-- Slots will be injected here -->
+                    </div>
+                    <input type="hidden" id="atime" name="appointmentTime" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">How can we help you?</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" id="contact-submit" class="btn" style="width: 100%;">Request Booking</button>
+            </form>
+            <div id="contact-thanks" style="display: none; padding: 20px; text-align: center; border: 2px solid var(--success-green); border-radius: 8px; margin-top: 20px;">
+                <h3>Message Sent!</h3>
+                <p>We'll call you within 24 hours to schedule your visit.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 NeighborTech. Built with patience.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px;">
+                <a href="family-plan.html" style="color: #777;">Premium Family Plan</a> | 
+                <a href="workshops.html" style="color: #777;">Group Workshops</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

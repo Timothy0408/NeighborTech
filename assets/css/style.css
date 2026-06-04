@@ -1,0 +1,239 @@
+
+:root {
+    --primary-blue: #2c3e50;
+    --secondary-blue: #34495e;
+    --accent-blue: #3498db;
+    --warm-bg: #fdfaf5;
+    --text-color: #333;
+    --success-green: #27ae60;
+    --button-orange: #e67e22;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--warm-bg);
+    font-size: 20px; /* Senior friendly base size */
+}
+
+h1, h2, h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; border-bottom: 2px solid var(--accent-blue); display: inline-block; padding-bottom: 5px; margin-bottom: 2rem; }
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-blue);
+}
+
+.phone-top {
+    font-weight: bold;
+    color: var(--accent-blue);
+}
+
+.hero {
+    padding: 60px 0;
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('../images/hero-senior-tech.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.hero h1 {
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--button-orange);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #d35400;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--success-green);
+    margin: 15px 0;
+}
+
+.lead-magnet {
+    background-color: var(--secondary-blue);
+    color: white;
+    padding: 60px 0;
+    border-radius: 15px;
+    margin: 40px 0;
+}
+
+.lead-magnet h2 {
+    color: white;
+    border-color: var(--button-orange);
+}
+
+.magnet-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.magnet-image {
+    flex: 1;
+    min-width: 250px;
+}
+
+.magnet-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.magnet-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.trust-signals {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.trust-item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.trust-icon {
+    font-size: 1.5rem;
+    color: var(--success-green);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.slot-btn {
+    padding: 20px;
+    background: white;
+    border: 2px solid var(--accent-blue);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.2s;
+    color: var(--primary-blue);
+    text-align: center;
+}
+
+.slot-btn:hover:not(:disabled) {
+    background: #e8f4fd;
+}
+
+.slot-btn.selected {
+    background: var(--accent-blue);
+    color: white;
+}
+
+.slot-btn:disabled {
+    background: #eee;
+    border-color: #ccc;
+    color: #999;
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    body { font-size: 18px; }
+}

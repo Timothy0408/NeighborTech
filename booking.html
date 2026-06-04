@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment | NeighborTech</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .step { display: none; }
+        .step.active { display: block; }
+        .step-header { margin-bottom: 2rem; text-align: center; }
+        .step-indicator { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+        .dot { width: 12px; height: 12px; background: #ccc; border-radius: 50%; }
+        .dot.active { background: var(--accent-blue); }
+        .booking-container { max-width: 700px; margin: 40px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .service-option { padding: 20px; border: 2px solid #eee; border-radius: 10px; margin-bottom: 15px; cursor: pointer; transition: all 0.2s; }
+        .service-option:hover { border-color: var(--accent-blue); background: #f9f9f9; }
+        .service-option.selected { border-color: var(--accent-blue); background: #e8f4fd; }
+        .btn-group { display: flex; justify-content: space-between; margin-top: 30px; }
+        .slots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: var(--primary-blue);">NeighborTech</a></div>
+            <nav>
+                <ul style="list-style: none; display: flex; gap: 20px; font-size: 1rem;">
+                    <li><a href="index.html" style="text-decoration: none; color: var(--secondary-blue);">Home</a></li>
+                    <li><a href="booking.html" style="text-decoration: none; color: var(--accent-blue); font-weight: bold;">Book Now</a></li>
+                    <li><a href="family-plan.html" style="text-decoration: none; color: var(--secondary-blue); font-weight: bold;">Family Plan</a></li>
+                    <li><a href="workshops.html" style="text-decoration: none; color: var(--secondary-blue); font-weight: bold;">Workshops</a></li>
+                </ul>
+            </nav>
+            <div class="phone-top">Call Us: (555) 123-4567</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="booking-container">
+            <div class="step-indicator">
+                <div class="dot active" id="dot1"></div>
+                <div class="dot" id="dot2"></div>
+                <div class="dot" id="dot3"></div>
+                <div class="dot" id="dot4"></div>
+            </div>
+
+            <!-- Step 1: Pick a Service -->
+            <div class="step active" id="step1">
+                <div class="step-header">
+                    <h2>Step 1: Pick a Service</h2>
+                    <p>What can we help you with today?</p>
+                </div>
+                <div class="service-option" data-service="Single Visit">
+                    <h3>The Quick Fix</h3>
+                    <p>Troubleshooting, printers, or software help. ($99 - $149)</p>
+                </div>
+                <div class="service-option" data-service="New Device Setup">
+                    <h3>The New Start</h3>
+                    <p>New device setup and data transfer. ($199 - $299)</p>
+                </div>
+                <div class="service-option" data-service="Tech Care Plan">
+                    <h3>Tech Care Plan</h3>
+                    <p>In-depth session for Plan members. ($29/mo)</p>
+                </div>
+                <div class="service-option" data-service="Workshop">
+                    <h3>Group Workshop</h3>
+                    <p>Book a private session for your group.</p>
+                </div>
+                <div class="btn-group">
+                    <span></span>
+                    <button class="btn next-btn" disabled>Next: Choose Date</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Pick a Date -->
+            <div class="step" id="step2">
+                <div class="step-header">
+                    <h2>Step 2: Pick a Date</h2>
+                    <p>When would you like us to come by?</p>
+                </div>
+                <div class="form-group">
+                    <label for="booking-date">Select Date</label>
+                    <input type="date" id="booking-date" style="font-size: 1.2rem; padding: 15px;">
+                </div>
+                <div class="btn-group">
+                    <button class="btn prev-btn" style="background: #ccc;">Back</button>
+                    <button class="btn next-btn" disabled>Next: Pick Time</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Pick a Time -->
+            <div class="step" id="step3">
+                <div class="step-header">
+                    <h2>Step 3: Pick a Time Slot</h2>
+                    <p>Select a time window that works for you:</p>
+                </div>
+                <div id="booking-slots" style="display: flex; flex-direction: column; gap: 15px;">
+                    <!-- Slots will be loaded here -->
+                </div>
+                <div class="btn-group">
+                    <button class="btn prev-btn" style="background: #ccc;">Back</button>
+                    <button class="btn next-btn" disabled>Next: Your Info</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Contact Info -->
+            <div class="step" id="step4">
+                <div class="step-header">
+                    <h2>Step 4: Your Contact Info</h2>
+                    <p>Almost done! Just need to know where to go.</p>
+                </div>
+                <form id="final-booking-form">
+                    <div class="form-group">
+                        <label for="bname">Full Name</label>
+                        <input type="text" id="bname" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bphone">Phone Number</label>
+                        <input type="text" id="bphone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bemail">Email Address</label>
+                        <input type="email" id="bemail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="baddress">Service Address</label>
+                        <input type="text" id="baddress" name="address" required placeholder="123 Senior Ln, Hometown">
+                    </div>
+                    <div class="form-group">
+                        <label for="bsource">How did you hear about us?</label>
+                        <select id="bsource" name="source" style="width: 100%; padding: 12px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
+                            <option value="">-- Select --</option>
+                            <option value="Friend/Family">Friend or Family</option>
+                            <option value="Senior Center">Senior Center</option>
+                            <option value="Facebook">Facebook</option>
+                            <option value="Flyer">Flyer / Business Card</option>
+                            <option value="Healthcare Provider">Healthcare Provider</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn prev-btn" style="background: #ccc;">Back</button>
+                        <button type="submit" class="btn">Confirm Booking</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Confirmation -->
+            <div class="step" id="step-confirm">
+                <div class="step-header" style="color: var(--success-green);">
+                    <h2 style="border: none;">✓ Booking Confirmed!</h2>
+                    <p>We've scheduled your appointment. You'll receive a confirmation call shortly.</p>
+                </div>
+                <div id="summary-card" style="background: #f9f9f9; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <!-- Summary info -->
+                </div>
+                <div style="text-align: center;">
+                    <a href="index.html" class="btn">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 NeighborTech. Built with patience.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let bookingData = {
+                service: '',
+                date: '',
+                time: '',
+                name: '',
+                phone: '',
+                email: '',
+                address: ''
+            };
+
+            let currentStep = 1;
+
+            const updateDots = () => {
+                for (let i = 1; i <= 4; i++) {
+                    const dot = document.getElementById(`dot${i}`);
+                    if (i <= currentStep) dot.classList.add('active');
+                    else dot.classList.remove('active');
+                }
+            };
+
+            const goToStep = (step) => {
+                document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+                document.getElementById(`step${step}`).classList.add('active');
+                currentStep = step;
+                updateDots();
+            };
+
+            // Step 1 logic
+            const serviceOptions = document.querySelectorAll('.service-option');
+            serviceOptions.forEach(opt => {
+                opt.addEventListener('click', () => {
+                    serviceOptions.forEach(o => o.classList.remove('selected'));
+                    opt.classList.add('selected');
+                    bookingData.service = opt.dataset.service;
+                    document.querySelector('#step1 .next-btn').disabled = false;
+                });
+            });
+
+            document.querySelector('#step1 .next-btn').addEventListener('click', () => goToStep(2));
+
+            // Step 2 logic
+            const dateInput = document.getElementById('booking-date');
+            // Set min date to tomorrow
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.min = tomorrow.toISOString().split('T')[0];
+
+            dateInput.addEventListener('change', () => {
+                bookingData.date = dateInput.value;
+                document.querySelector('#step2 .next-btn').disabled = false;
+            });
+
+            document.querySelector('#step2 .next-btn').addEventListener('click', () => {
+                loadSlots();
+                goToStep(3);
+            });
+
+            // Step 3 logic (Slots)
+            const loadSlots = async () => {
+                const slotsGrid = document.getElementById('booking-slots');
+                slotsGrid.innerHTML = 'Loading slots...';
+                
+                try {
+                    const response = await fetch(`https://api.neighbortech.com/available-slots?date=${bookingData.date}`);
+                    const slots = await response.json();
+                    
+                    slotsGrid.innerHTML = '';
+                    slots.forEach(slot => {
+                        const btn = document.createElement('button');
+                        btn.className = 'slot-btn';
+                        btn.textContent = slot.label;
+                        btn.disabled = !slot.available;
+                        if (slot.available) {
+                            btn.addEventListener('click', () => {
+                                document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('selected'));
+                                btn.classList.add('selected');
+                                bookingData.time = slot.id;
+                                document.querySelector('#step3 .next-btn').disabled = false;
+                            });
+                        }
+                        slotsGrid.appendChild(btn);
+                    });
+                } catch (e) {
+                    console.error(e);
+                    slotsGrid.innerHTML = 'Error loading slots.';
+                }
+            };
+
+            document.querySelector('#step3 .next-btn').addEventListener('click', () => goToStep(4));
+
+            // Back buttons
+            document.querySelectorAll('.prev-btn').forEach(btn => {
+                btn.addEventListener('click', () => goToStep(currentStep - 1));
+            });
+
+            // Final submit
+            const form = document.getElementById('final-booking-form');
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const finalData = { ...bookingData, ...Object.fromEntries(formData.entries()) };
+                
+                try {
+                    const response = await fetch('https://api.neighbortech.com/submit-booking', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(finalData)
+                    });
+                    
+                    if (response.ok) {
+                        document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+                        document.getElementById('step-confirm').classList.add('active');
+                        
+                        // Map ID to label for summary
+                        const slotLabels = {
+                            'morning': 'Morning (9 AM - 12 PM)',
+                            'afternoon': 'Afternoon (12 PM - 4 PM)',
+                            'evening': 'Evening (4 PM - 7 PM)'
+                        };
+
+                        document.getElementById('summary-card').innerHTML = `
+                            <p><strong>Service:</strong> ${finalData.service}</p>
+                            <p><strong>Date:</strong> ${new Date(finalData.date).toLocaleDateString()}</p>
+                            <p><strong>Time Window:</strong> ${slotLabels[finalData.time] || finalData.time}</p>
+                            <p><strong>Address:</strong> ${finalData.address}</p>
+                        `;
+                    } else {
+                        alert('Error submitting booking. Please try again.');
+                    }
+                } catch (e) {
+                    alert('Server error. Please try again.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

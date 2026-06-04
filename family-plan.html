@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Family Plan | NeighborTech</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: var(--primary-blue);">NeighborTech</a></div>
+            <nav>
+                <ul style="list-style: none; display: flex; gap: 20px; font-size: 1rem;">
+                    <li><a href="booking.html" style="text-decoration: none; color: var(--accent-blue); font-weight: bold;">Book Now</a></li>
+                    <li><a href="family-plan.html" style="text-decoration: none; color: var(--secondary-blue); font-weight: bold;">Family Plan</a></li>
+                    <li><a href="workshops.html" style="text-decoration: none; color: var(--secondary-blue); font-weight: bold;">Workshops</a></li>
+                </ul>
+            </nav>
+            <div class="phone-top">Call Us: (555) 123-4567</div>
+        </div>
+    </header>
+
+    <section class="hero" style="background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('assets/images/hero-senior-tech.png');">
+        <div class="container">
+            <h1>Peace of mind for you, confidence for them.</h1>
+            <p style="font-size: 1.4rem; margin-bottom: 2rem;">Living far from your parents shouldn't mean they struggle with technology alone. Our Premium Family Plan ensures they always have a patient expert just a phone call away.</p>
+            <a href="#sponsor-form" class="btn">Sponsor a Parent Today</a>
+        </div>
+    </section>
+
+    <section class="container section">
+        <h2>What's Included in the Premium Family Plan</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="trust-icon" style="font-size: 3rem; margin-bottom: 20px;">⭐</div>
+                <h3>Priority Support</h3>
+                <p>Your parents get a dedicated "fast-pass" line. Most calls are answered in under 2 minutes by a technician they already know and trust.</p>
+            </div>
+            <div class="service-card">
+                <div class="trust-icon" style="font-size: 3rem; margin-bottom: 20px;">🛡️</div>
+                <h3>Device Monitoring</h3>
+                <p>We remotely monitor their devices for security threats, scam pop-ups, and software updates to catch problems before they start.</p>
+            </div>
+            <div class="service-card">
+                <div class="trust-icon" style="font-size: 3rem; margin-bottom: 20px;">📧</div>
+                <h3>Family Updates</h3>
+                <p>Receive a monthly summary of the support we provided, any security issues we blocked, and progress on their tech "learning goals."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="background-color: var(--white); padding: 40px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 60px;">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="price" style="font-size: 3rem;">$79 - $99<small style="font-size: 1rem; color: #777;">/month</small></div>
+            <p>Billed monthly. No long-term contracts. Cancel anytime.</p>
+        </div>
+        <div style="max-width: 600px; margin: 0 auto;">
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                    <span style="color: var(--success-green); font-weight: bold;">✓</span> Unlimited Phone & Remote Support
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                    <span style="color: var(--success-green); font-weight: bold;">✓</span> One In-Home Visit per Quarter
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                    <span style="color: var(--success-green); font-weight: bold;">✓</span> Scam & Fraud Protection Monitoring
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                    <span style="color: var(--success-green); font-weight: bold;">✓</span> Monthly "Tech Wellness" Report for the Family
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container section" id="sponsor-form">
+        <div style="max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <h2 style="text-align: center; border-bottom: none;">Sponsor a Parent</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Fill out the form below and we'll reach out to set up a "Meet the Tech" call with you and your parents.</p>
+            <form id="family-form">
+                <div class="form-group">
+                    <label for="fname">Your Name</label>
+                    <input type="text" id="fname" name="your_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="femail">Your Email</label>
+                    <input type="email" id="femail" name="your_email" required>
+                </div>
+                <div class="form-group">
+                    <label for="pname">Parent's Name(s)</label>
+                    <input type="text" id="pname" name="parent_names" required>
+                </div>
+                <div class="form-group">
+                    <label for="plocation">Parent's City/Neighborhood</label>
+                    <input type="text" id="plocation" name="parent_location" required>
+                </div>
+                <div class="form-group">
+                    <label for="fmessage">Anything specific they need help with?</label>
+                    <textarea id="fmessage" name="details" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Inquire About Family Plan</button>
+            </form>
+            <div id="family-thanks" style="display: none; padding: 20px; text-align: center; border: 2px solid var(--success-green); border-radius: 8px; margin-top: 20px;">
+                <h3>Request Sent!</h3>
+                <p>We'll email you within 24 hours to schedule a consultation.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 NeighborTech. Built with patience.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px;">
+                <a href="family-plan.html" style="color: #777;">Premium Family Plan</a> | 
+                <a href="workshops.html" style="color: #777;">Group Workshops</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

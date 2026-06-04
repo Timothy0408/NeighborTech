@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Workshops | NeighborTech</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: var(--primary-blue);">NeighborTech</a></div>
+            <nav>
+                <ul style="list-style: none; display: flex; gap: 20px; font-size: 1rem;">
+                    <li><a href="booking.html" style="text-decoration: none; color: var(--accent-blue); font-weight: bold;">Book Now</a></li>
+                    <li><a href="family-plan.html" style="text-decoration: none; color: var(--secondary-blue); font-weight: bold;">Family Plan</a></li>
+                    <li><a href="workshops.html" style="text-decoration: none; color: var(--secondary-blue); font-weight: bold;">Workshops</a></li>
+                </ul>
+            </nav>
+            <div class="phone-top">Call Us: (555) 123-4567</div>
+        </div>
+    </header>
+
+    <section class="hero" style="background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('assets/images/hero-senior-tech.png');">
+        <div class="container">
+            <h1>Educational Tech Workshops for Your Community.</h1>
+            <p style="font-size: 1.4rem; margin-bottom: 2rem;">We partner with senior centers, retirement communities, and local organizations to provide hands-on, patient tech education that builds confidence and safety.</p>
+            <a href="#booking-form" class="btn">Book a Workshop Inquiry</a>
+        </div>
+    </section>
+
+    <section class="container section">
+        <h2>Available Workshop Topics</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Smartphone Basics</h3>
+                <p>How to make calls, send texts, use the camera, and install helpful apps. Perfect for new smartphone users.</p>
+                <div class="price">60-90 Min</div>
+            </div>
+            <div class="service-card">
+                <h3>Internet Safety 101</h3>
+                <p>How to browse safely, create strong passwords, and spot "phishing" emails before clicking.</p>
+                <div class="price">60-90 Min</div>
+            </div>
+            <div class="service-card">
+                <h3>Avoiding Online Scams</h3>
+                <p>A deep dive into common digital frauds, with real-world examples and practical defense strategies.</p>
+                <div class="price">90 Min</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="background-color: var(--white); padding: 40px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 60px;">
+        <div style="display: flex; gap: 40px; flex-wrap: wrap; align-items: flex-start;">
+            <div style="flex: 1; min-width: 300px;">
+                <h2>Pricing & Logistics</h2>
+                <p>We offer flexible pricing models to fit your organization's budget:</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px;"><strong style="color: var(--accent-blue);">Flat Rate:</strong> A simple per-session fee starting at $150.</li>
+                    <li style="margin-bottom: 15px;"><strong style="color: var(--accent-blue);">Sponsored:</strong> Free to residents, with the community sponsoring the costs.</li>
+                    <li style="margin-bottom: 15px;"><strong style="color: var(--accent-blue);">Grant-Friendly:</strong> We can provide documentation for grant-funded educational programs.</li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 300px; background: #e8f4fd; padding: 30px; border-radius: 10px;">
+                <h3>What We Need:</h3>
+                <ul style="padding-left: 20px;">
+                    <li>A room with comfortable seating</li>
+                    <li>A projector or large TV screen (we can bring our own if needed)</li>
+                    <li>At least 5 confirmed attendees</li>
+                    <li>Wi-Fi access for the participants</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container section" id="booking-form">
+        <div style="max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <h2 style="text-align: center; border-bottom: none;">Workshop Inquiry</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Tell us about your group and we'll help you pick the perfect session.</p>
+            <form id="workshop-form">
+                <div class="form-group">
+                    <label for="orgname">Organization Name</label>
+                    <input type="text" id="orgname" name="org_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactname">Contact Person</label>
+                    <input type="text" id="contactname" name="contact_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="topic">Preferred Topic</label>
+                    <select id="topic" name="topic" style="width: 100%; padding: 12px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;">
+                        <option>Smartphone Basics</option>
+                        <option>Internet Safety 101</option>
+                        <option>Avoiding Online Scams</option>
+                        <option>Other / Not Sure</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="wmessage">Estimated Number of Attendees</label>
+                    <input type="text" id="attendees" name="attendees">
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Submit Inquiry</button>
+            </form>
+            <div id="workshop-thanks" style="display: none; padding: 20px; text-align: center; border: 2px solid var(--success-green); border-radius: 8px; margin-top: 20px;">
+                <h3>Thank you for your interest!</h3>
+                <p>We'll be in touch within 24 hours to discuss your workshop.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 NeighborTech. Built with patience.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px;">
+                <a href="family-plan.html" style="color: #777;">Premium Family Plan</a> | 
+                <a href="workshops.html" style="color: #777;">Group Workshops</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
