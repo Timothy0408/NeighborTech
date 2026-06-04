@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    const API_BASE = 'https://api.neighbortech.com'; // Production API URL
+    const API_BASE = '/api'; // Set to your backend server URL in production
 
     const handleFormSubmission = async (form, thanksDiv, formType) => {
         form.addEventListener('submit', async (e) => {
