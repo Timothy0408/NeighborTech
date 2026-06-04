@@ -234,7 +234,7 @@
                 slotsGrid.innerHTML = 'Loading slots...';
                 
                 try {
-                    const response = await fetch(`/api//available-slots?date=${bookingData.date}`);
+                    const response = await fetch(`/api/available-slots?date=${bookingData.date}`);
                     const slots = await response.json();
                     
                     slotsGrid.innerHTML = '';
@@ -274,7 +274,7 @@
                 const finalData = { ...bookingData, ...Object.fromEntries(formData.entries()) };
                 
                 try {
-                    const response = await fetch('/api//submit-booking', {
+                    const response = await fetch('/api/submit-booking', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(finalData)
